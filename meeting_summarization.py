@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Mihir Verma , Yashwant Rawat , Tushar Birthare and Aditya Rai
+# All rights reserved.
 """Import dependencies"""
 import os
 import warnings
@@ -53,7 +55,7 @@ class MeetingSummarization:
     def __init__(self,api_key=None):
         self.llm=LLM(
             model="gemini-2.5-flash",
-            api_key=API_KEY or os.getenv(API_KEY),
+            api_key=API_KEY,
             temperature=0.3
         )
 
@@ -167,7 +169,7 @@ if __name__=="__main__":
     
     pipepline=MeetingSummarizationPipeLine(
                 whisper_model_size="base",
-                api_key="API_KEY"
+                api_key=os.getenv("API_KEY")
     )
     report=pipepline.run(audio_file)
 

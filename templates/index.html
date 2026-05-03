@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summarizer Audio Setup</title>
+    <meta name="description" content="Record or upload audio for meeting summarization.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="dynamic-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <main class="glass-container">
+        <header>
+            <h1>Meeting Audio Center</h1>
+            <p>Capture real-time audio or upload previous recordings to generate intelligent meeting summaries.</p>
+        </header>
+
+        <div class="app-mode-selector">
+            <button class="mode-btn active" id="btn-mode-record">🎤 Record Live</button>
+            <button class="mode-btn" id="btn-mode-upload">📁 Upload File</button>
+        </div>
+
+        <section id="section-record" class="interaction-section active">
+            <div class="visualizer-container">
+                <div class="pulse-ring" id="pulse-ring"></div>
+                <button class="mic-button" id="btn-record" aria-label="Start Recording">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="22"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="status-text" id="record-status">Click to Start Recording</div>
+            <div class="timer" id="record-timer">00:00</div>
+            
+            <div class="playback-area hidden" id="playback-area">
+                <audio id="audio-playback" controls></audio>
+                <button class="action-btn primary" id="btn-submit-recording">Upload Recording</button>
+                <button class="action-btn secondary" id="btn-discard-recording">Discard</button>
+            </div>
+        </section>
+
+        <section id="section-upload" class="interaction-section hidden">
+            <div class="upload-dropzone" id="upload-dropzone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p>Drag and drop your audio file here</p>
+                <span class="divider-text">or</span>
+                <input type="file" id="file-input" accept="audio/*" class="hidden-input">
+                <button class="action-btn outline" id="btn-browse-files">Browse Files</button>
+            </div>
+            <div class="selected-file hidden" id="selected-file-info">
+                <span id="file-name" class="file-name">filename.mp3</span>
+                <button class="action-btn primary mt-4" id="btn-submit-upload">Upload File</button>
+            </div>
+        </section>
+
+        <div class="notification" id="notification"></div>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
