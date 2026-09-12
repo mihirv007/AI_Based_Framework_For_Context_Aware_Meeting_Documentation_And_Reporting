@@ -1,0 +1,109 @@
+# Virtual Environment
+env/
+venv/
+.venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ML / Data Science
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.pb
+*.tflite
+*.weights
+*.caffemodel
+
+# Datasets & Large Files
+data/
+datasets/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.csv
+*.json.gz
+
+# Images (raw/untracked datasets)
+# Uncomment if you don't want to track images
+# *.jpg
+# *.jpeg
+# *.png
+# *.bmp
+# *.tiff
+# *.gif
+
+# Logs & Outputs
+logs/
+runs/
+outputs/
+results/
+*.log
+*.out
+tensorboard/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+.env.*
+secrets.yaml
+secrets.json
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MLflow / Weights & Biases
+mlruns/
+wandb/
+
+# Byte-compiled / cached
+*.pyc
+
+# macOS archive metadata
+__MACOSX/
+
+# Keras model files
+*.keras
+
+# Uploaded files warehouse
+static/save_files_warehouse/
