@@ -29,7 +29,6 @@ body {
     position: relative;
 }
 
-/* Background animated gradients */
 .dynamic-background {
     position: absolute;
     width: 100vw;
@@ -68,7 +67,6 @@ body {
     100% { transform: translate(50px, 50px) scale(1.1); }
 }
 
-/* Main Container and Glassmorphism */
 .glass-container {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
@@ -99,7 +97,6 @@ header p {
     line-height: 1.5;
 }
 
-/* Tab Selectors */
 .app-mode-selector {
     display: flex;
     background: rgba(15, 23, 42, 0.6);
@@ -128,7 +125,6 @@ header p {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-/* Sections */
 .interaction-section {
     display: none;
     flex-direction: column;
@@ -145,7 +141,6 @@ header p {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Record Section */
 .visualizer-container {
     position: relative;
     width: 150px;
@@ -229,23 +224,10 @@ header p {
     margin-bottom: 20px;
 }
 
-.playback-area {
-    margin-top: 20px;
-    width: 100%;
-}
+.playback-area { margin-top: 20px; width: 100%; }
+.playback-area.hidden { display: none; }
+audio { width: 100%; margin-bottom: 20px; border-radius: 8px; outline: none; }
 
-.playback-area.hidden {
-    display: none;
-}
-
-audio {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    outline: none;
-}
-
-/* Upload Section */
 .upload-dropzone {
     width: 100%;
     border: 2px dashed var(--text-muted);
@@ -256,33 +238,11 @@ audio {
     background: rgba(15, 23, 42, 0.3);
 }
 
-.upload-dropzone:hover, .upload-dropzone.dragover {
-    border-color: var(--primary);
-    background: rgba(59, 130, 246, 0.1);
-}
-
-.upload-icon {
-    width: 50px;
-    height: 50px;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.upload-dropzone p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.divider-text {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.hidden-input {
-    display: none;
-}
+.upload-dropzone:hover { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); }
+.upload-icon { width: 50px; height: 50px; color: var(--primary); margin-bottom: 15px; }
+.upload-dropzone p { font-size: 1.1rem; margin-bottom: 10px; }
+.divider-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px; display: block; }
+.hidden-input { display: none; }
 
 .selected-file {
     margin-top: 20px;
@@ -292,87 +252,26 @@ audio {
     border-radius: 12px;
     border: 1px solid var(--glass-border);
 }
+.selected-file.hidden { display: none; }
+.file-name { display: block; font-size: 1.1rem; font-weight: 600; color: var(--text-main); word-break: break-all; }
 
-.selected-file.hidden {
-    display: none;
-}
-
-.file-name {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-main);
-    word-break: break-all;
-}
-
-/* Buttons */
 .action-btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    margin: 5px;
+    padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: all 0.3s ease; border: none; margin: 5px;
 }
+.action-btn.primary { background: var(--primary); color: white; }
+.action-btn.primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+.action-btn.secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-main); }
+.action-btn.secondary:hover { background: rgba(255, 255, 255, 0.2); }
+.action-btn.outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.action-btn.outline:hover { background: var(--primary); color: white; }
+.mt-4 { margin-top: 16px; }
 
-.action-btn.primary {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-}
-
-.action-btn.primary:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-.action-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-main);
-}
-
-.action-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.action-btn.outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-}
-
-.action-btn.outline:hover {
-    background: var(--primary);
-    color: white;
-}
-
-.mt-4 {
-    margin-top: 16px;
-}
-
-/* Notifications */
 .notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 15px 25px;
-    background: var(--glass-bg);
-    border-left: 4px solid var(--success);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transform: translateX(150%);
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 1000;
-    font-weight: 600;
+    position: fixed; top: 20px; right: 20px; padding: 15px 25px;
+    background: var(--glass-bg); border-left: 4px solid var(--success);
+    border-radius: 8px; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateX(150%); transition: transform 0.4s ease; z-index: 1000; font-weight: 600;
 }
-
-.notification.show {
-    transform: translateX(0);
-}
-
-.notification.error {
-    border-left-color: var(--danger);
-}
+.notification.show { transform: translateX(0); }
+.notification.error { border-left-color: var(--danger); }
